@@ -1,11 +1,8 @@
-﻿#include <iostream>
-#include <conio.h>
-#include "DrawEngine.h"
+﻿#include "stdafx.h"
 
 int main()
 {
     setlocale(LC_ALL, "Rus");
-    //system("mode con cols=100 lines=20");
     system("title European roulette");
     system("color 27");
 
