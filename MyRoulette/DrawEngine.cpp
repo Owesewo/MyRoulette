@@ -64,7 +64,7 @@ void DrawEngine::Initiallize()
 
 void DrawEngine::SelectMainOption()
 {
-	char choice = getchar();
+	char choice = _getch();
 
 	switch (choice) {
 	case KEY_ARROW_UP:
@@ -133,7 +133,7 @@ void DrawEngine::ShowHelp()
 	std::cout << std::endl;
 
 	std::cout << "Press any button to return...";
-	getchar();
+	_getch();
 
 	selectedCell = buff;
 }
@@ -218,7 +218,7 @@ void DrawEngine::DrawField()
 
 			delimiter += std::format("{0:5}{1:}", std::string(5, '-'), x == 0 || x == 12 || x == 13 ? "|" : "+");
 
-			// 1to12
+			// 2to1
 			if (x == 13)
 			{
 				SetColor(FieldColors.first, FieldColors.second);
@@ -369,7 +369,7 @@ void DrawEngine::SelectCell()
 	int x = selectedCell.first;
 	int y = selectedCell.second;
 
-	char choice = getchar();
+	char choice = _getch();
 
 	switch (choice) {
 	case KEY_ARROW_UP:
@@ -509,7 +509,7 @@ void DrawEngine::SelectChip()
 {
 	int x = selectedChip;
 
-	char choice = getchar();
+	char choice = _getch();
 
 	switch (choice) {
 	case KEY_ARROW_RIGHT:
@@ -811,7 +811,7 @@ void DrawEngine::CheckStakes(int winCell)
 	std::cout << std::format("{0:20}", std::string(20, '=')) << std::endl;
 
 	std::cout << "Press any key to coninue";
-	getchar();
+	_getch();
 }
 
 void DrawEngine::SetColor(ConsoleColor text, ConsoleColor background)
